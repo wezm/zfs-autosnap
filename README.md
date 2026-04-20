@@ -36,11 +36,18 @@ Usage
 -----
 
 1. Add the retention policy to the dataset you want to snapshot. E.g.
-   `zfs set at.rollc.at:snapkeep=h24d30w8m6y1 tank`
-2. Run `zfs-autosnap snap` hourly via `cron.hourly` or systemd timer
-3. Run `zfs-autosnap gc` daily via `cron.daily`
+   `zfs set at.rollc.at:snapkeep=h24d30w8m6y1 tank`.
+2. Run `zfs-autosnap snap` hourly via `cron` or systemd timer.
+3. Run `zfs-autosnap gc` daily via `cron` or systemd timer.
 
 Try `zfs-autosnap status` to check what's going on.
+
+### cron
+
+Example `cron` file `/etc/cron.d/zfs-autosnap`:
+
+    @hourly root /usr/bin/zfs-autosnap snap
+    @daily  root /usr/bin/zfs-autosnap gc  
 
 ### systemd
 
