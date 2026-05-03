@@ -1,3 +1,8 @@
+> [!IMPORTANT]  
+> Moved to Codeberg 👉 <https://codeberg.org/wezm/zfs-autosnap>.
+
+----
+
 <h1 align="center">
   📸<br>
   zfs-autosnap
